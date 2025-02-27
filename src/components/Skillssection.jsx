@@ -18,7 +18,8 @@ const skills=[
     {
         skillname:"Mice",
         level:"Beginner "
-    }
+    },
+    
 
 ]
 
@@ -30,7 +31,7 @@ const Skillssection = () => {
         <div className=' w-full flex flex-wrap justify-between gap-5'>
             {
                 skills.map((skill,index)=>(
-                    <div key={index} className=' bg-secondary rounded-3xl  flex  justify-between px-10 py-1 items-center w-[500px]'>
+             <div key={index} className=' bg-secondary rounded-3xl  flex  justify-between px-8 py-1 items-center w-[400px]'>
                  <p className=' font-semibold'>{skill.skillname}</p>
                  <div className=' flex  items-center min-w-[120px]  gap-4'>
                  <p className=' font-bold text-2xl'>|</p>

@@ -15,11 +15,28 @@ const Herosection = () => {
             </pre>
         </div>
 
-        <div className='w-[40%] rounded-3xl bg-black flex h-[250px] overflow-hidden '>
-            <div className='w-[40%] bg-gray-500'>
+        <div className='w-[40%] rounded-[15px] bg-black flex  overflow-hidden '>
+            <div  style={{ backgroundImage: "url('TextureDark.png')" }} className="w-[160px] h-[250px]  bg-cover bg-center   bg-secondary flex flex-col gap-3 justify-center items-center " >
+
+              <Image src={'/profile.png'} width={80} height={80} alt='profile_image'/>
+
+              <small>Jul 15,1998</small>
+
 
             </div>
-            <div className='w-[60%]  bg-green-300 '>
+            <div  style={{ backgroundImage: "url('TextureLight.png')" }} className='w-[280px]  h-[250px] text-black  bg-cover bg-center  bg-white  p-6  '>
+
+              <p className=' font-bold text-lg'>Rajesh Rajendran</p>
+              <p className=' text-[12px]'>Surveying with precision, building with confidence</p>
+
+              <hr/>
+              <div>
+                <p className=''> <small className='font-bold'>O</small>Auto Cadd </p>
+               
+                 <small>Auto Cadd</small>
+                 <small>MS office </small>
+
+              </div>
 
             </div>
 
