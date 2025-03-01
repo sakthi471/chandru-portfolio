@@ -16,14 +16,15 @@ const educationDetails = [
         institute: "Rajavignesh Higher Secondary School",
         year: "06/2014 to 03/2019",
         location: "Melamathur"
-    }
+    },
+   
 ]
 
 export default function EducationExperienceToggle() {
     const [activeSection, setActiveSection] = useState("education");
 
     return (
-        <div className=" flex flex-col  items-center p-6 gap-11">
+        <div id='experience'  className=" scroll-mt-20 w-full flex flex-col  items-center p-6 gap-11">
             {/* Buttons for toggling */}
             <div className="flex space-x-4 mb-4">
                 <button
@@ -47,44 +48,39 @@ export default function EducationExperienceToggle() {
             </div>
 
             {/* Section Content */}
-            <div className=" w-full flex  gap-8 flex-wrap items-center ">
-                {activeSection === "education" ? (
-                    <div className=" bg-secondary w-[250px] h-[250px] rounded-2xl flex flex-col items-center justify-center gap-3">
-                        <div className="w-[60px] h-[60px] overflow-hidden rounded-full bg-foreground flex items-center justify-center mx-auto mt-4"   >
-                            <Image src={'./Company_icon.svg'} width={60} height={60} alt="company icon" />
-                        </div>
-                        <div className="flex flex-col items-center ">
-                            <p className=" font-semibold py-1">Survey Engineer</p>
-                            <small className="  text-[11px] text-accent">GP Survey</small>
-                            <small className="  text-[11px] text-gray-400" >06/2019 to 01/2025</small>
-                            <small className="  text-[11px] text-gray-400" >Full-time</small>
-                            <small className="  text-[11px] text-gray-400" >Trichy</small>
-                        </div>
-
-                    </div>
-
-                ) : (
-                <>
-                   {
-                     educationDetails.map((education, index) => (
-                        <div key={index} className=" bg-secondary w-[250px] h-[250px] rounded-2xl flex flex-col items-center justify-center gap-3">
-                        <div className="w-[60px] h-[60px] overflow-hidden rounded-full bg-foreground flex items-center justify-center mx-auto mt-4"   >
-                            <Image src={'./Company_icon.svg'} width={60} height={60} alt="company icon" />
-                        </div>
-                        <div className="flex flex-col items-center ">
-                            <p className=" font-semibold py-1">{education.course}</p>
-                            <small className="  text-[11px] text-accent">{education.institute}</small>
-                            <small className="  text-[11px] text-gray-400" >{education.year}</small>
-                            <small className="  text-[11px] text-gray-400" >{education.location}</small>
-                        </div>
-
-                    </div>
-                     ))
-                   }
-                </>
-                
-                )}
+            <div className="w-full flex gap-10 overflow-x-auto md:overflow-hidden md:flex-nowrap md:justify-start md:scroll-smooth scrollbar-hide">
+    {activeSection === "education" ? (
+        <div className="bg-secondary w-[250px] h-[250px] rounded-2xl flex flex-col items-center justify-center gap-3 shrink-0">
+            <div className="w-[60px] h-[60px] overflow-hidden rounded-full bg-foreground flex items-center justify-center mx-auto mt-4">
+                <Image src={'./Company_icon.svg'}   style={{ width: "auto", height: "auto" }}
+ width={60} height={60} alt="company icon" />
             </div>
+            <div className="flex flex-col items-center">
+                <p className="font-semibold py-1">Survey Engineer</p>
+                <small className="text-[11px] text-accent">GP Survey</small>
+                <small className="text-[11px] text-gray-400">06/2019 to 01/2025</small>
+                <small className="text-[11px] text-gray-400">Full-time</small>
+                <small className="text-[11px] text-gray-400">Trichy</small>
+            </div>
+        </div>
+    ) : (
+        educationDetails.map((education, index) => (
+            <div key={index} className="bg-secondary w-[250px] h-[250px] rounded-2xl flex flex-col items-center justify-center gap-3 shrink-0">
+                <div className="w-[60px] h-[60px] overflow-hidden rounded-full bg-foreground flex items-center justify-center mx-auto mt-4">
+                    <Image src={'./College.svg'}   style={{ width: "auto", height: "auto" }}
+ width={60} height={60} alt="company icon" />
+                </div>
+                <div className="flex flex-col items-center">
+                    <p className="font-semibold py-1">{education.course}</p>
+                    <small className="text-[11px] text-accent">{education.institute}</small>
+                    <small className="text-[11px] text-gray-400">{education.year}</small>
+                    <small className="text-[11px] text-gray-400">{education.location}</small>
+                </div>
+            </div>
+        ))
+    )}
+</div>
+
         </div>
     );
 }

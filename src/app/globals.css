@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background:#252b2d;
   --foreground: #d6dddc;
@@ -10,6 +15,14 @@
 
 }
 
+
+.glass-effect{
+  background: rgba( 47, 55, 56, 0.8 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 16.5px );
+  -webkit-backdrop-filter: blur( 16.5px );
+  border-radius: 10px;
+}
 
 
 body {

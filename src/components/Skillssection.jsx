@@ -10,28 +10,20 @@ const skills=[
         skillname:"Ms office",
         level:"Intermediate"
     },
-    {
-        skillname:"Ms office",
-        level:"Intermediate"
-    }
-    ,
-    {
-        skillname:"Mice",
-        level:"Beginner "
-    },
+
     
 
 ]
 
 const Skillssection = () => {
     return (
-         <div className=' flex flex-col items-center gap-7'>
+         <div id='expertise' className=' scroll-mt-36 flex flex-col items-center gap-7 p-5'>
             <p className=' font-bold text-2xl'>Expertise</p>
 
-        <div className=' w-full flex flex-wrap justify-between gap-5'>
+        <div className=' w-full flex flex-wrap justify-between  gap-5 max-md:justify-center'>
             {
                 skills.map((skill,index)=>(
-             <div key={index} className=' bg-secondary rounded-3xl  flex  justify-between px-8 py-1 items-center w-[400px]'>
+             <div key={index} className=' bg-secondary rounded-3xl  flex  justify-between px-8 py-1 items-center w-[400px] max-lg:w-[340px]'>
                  <p className=' font-semibold'>{skill.skillname}</p>
                  <div className=' flex  items-center min-w-[120px]  gap-4'>
                  <p className=' font-bold text-2xl'>|</p>
