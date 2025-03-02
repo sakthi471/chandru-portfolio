@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/NavbarSection";
 import Footer from "@/components/FooterSection";
+import socialLinkData from "@/data/socialLinksData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +20,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <body
@@ -26,7 +28,7 @@ export default function RootLayout({ children }) {
         <div className=" flex  flex-col  items-center pt-28">
         <Navbar/>
           {children}  
-          <Footer/>
+          <Footer socialLinkData={socialLinkData}/>
         </div>
       </body>
     </html>
