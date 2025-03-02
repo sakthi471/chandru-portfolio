@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Herosection = () => {
+const Herosection = ({ skills,user}) => {
   return (
     <div
       id="home"
@@ -22,11 +22,10 @@ const Herosection = () => {
         >
           <Image
             className="rounded-md"
-            src="/profile.png"
-            width={70}
-            height={70}
+            src={`https:${user[0].fields.profilePhoto.fields.file.url}`}
+            width={90}
+            height={90}
             alt="profile_image"
-            style={{ width: "auto", height: "auto" }}
           />
           <div>
             <p className="font-bold hidden max-md:block">Rajesh Rajendran</p>
@@ -45,15 +44,12 @@ const Herosection = () => {
           </div>
 
           <div className="flex  gap-3 items-center">
-            <div className="flex  gap-2 items-center">
-              <p className=" font-extrabold text-[16px]">O</p>
-              <small className=" font-medium">Auto Cadd</small>
-            </div>
-
-            <div className="flex  gap-2 items-center">
-              <p className=" font-extrabold text-[16px]">O</p>
-              <small className=" font-medium">Ms office</small>
-            </div>
+            {skills.map((skill) => (
+              <div key={skill.sys.id} className="flex  gap-2 items-center">
+                <p className=" font-extrabold text-[16px]">O</p>
+                <small className=" font-medium">{skill.fields.skillName}</small>
+              </div>
+            ))}
           </div>
         </div>
       </div>

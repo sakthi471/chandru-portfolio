@@ -12,7 +12,7 @@ const data = [
   "Want to outsource",
 ];
 
-const Aboutsection = () => {
+const Aboutsection = ({user}) => {
   return (
     <div
       id="about"
@@ -30,8 +30,7 @@ const Aboutsection = () => {
         <div className="w-[120px] h-[120px] flex justify-center items-center text-center bg-background rounded-2xl ">
           <div className="relative w-10 h-10 flex items-center justify-center cursor-pointer group">
             <a
-              href="./resumee.pdf"
-              download="Rajesh_Rajendran_Resume.pdf"
+              href={`https:${user[0].fields.resume.fields.file.url}`}
               className="relative w-10 h-10 flex items-center justify-center cursor-pointer group"
             >
                 <FileUser
